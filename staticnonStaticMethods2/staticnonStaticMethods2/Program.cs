@@ -30,7 +30,7 @@ namespace staticNonStaticMethods
 
             //this shows a static instance of a method, using the CLASS METHOD approach to calling it
             Console.WriteLine("\ncar Objects instantiated " + Car.numberOfCars);
-
+            Console.WriteLine(Car.carList); 
 
             Console.ReadLine();
         }
@@ -40,7 +40,7 @@ namespace staticNonStaticMethods
 
 
 
-        //created a public class Car, avaialbel to be accessed by other classes wthin the project
+        //created a public class Car, available to be accessed by other classes wthin the project
         class Car
         {
             //declared private string variables/fields
@@ -48,7 +48,8 @@ namespace staticNonStaticMethods
             public string make;
             public int price;
             public bool sold;
-            List<Car> carList = new List<Car> { };
+            //declared the list as a public static, so it can be used in the class without the need to be instantiated via another method below
+            public static List<Car> carList = new List<Car> ();
 
 
             //declaring the method of ~AddCAr with it's given parameters
@@ -58,8 +59,8 @@ namespace staticNonStaticMethods
                 this.name = name;
                 this.price = price;
             }
-            //non static
-            public void ListCar()
+            ////non static
+            public static void ListCar()
             {
                 // Iterate through the list.
                 foreach (var carL in carList)
@@ -76,13 +77,18 @@ namespace staticNonStaticMethods
                 Car.numberOfCars--;
             }
 
-           
 
+           
+            // a static feild in the car class at the moment
+            //there should be another for this excercise in this class
             public static int numberOfCars;
             public Car()
             {
                 numberOfCars++;
+
             }
+
+
 
         }
     }
