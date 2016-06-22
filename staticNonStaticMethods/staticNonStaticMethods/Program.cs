@@ -63,13 +63,11 @@ namespace staticNonStaticMethods
             //void being that it doesnt add anything just alters the information of the object according to it's own template.
             public void ListCar()
             {
-                var carList = new List<string> { this.name, this.make};
+                Console.WriteLine(this.name);
+                Console.WriteLine(this.make);
+                Console.WriteLine(this.price);
+                Console.WriteLine(this.sold);
 
-                // Iterate through the list.
-                foreach (var carL in carList)
-                {
-                    Console.Write(carL + "\n ");
-                }
             }
 
             public void SoldCar(bool isSold, int price)
