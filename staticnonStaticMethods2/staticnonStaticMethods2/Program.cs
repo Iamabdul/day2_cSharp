@@ -30,7 +30,7 @@ namespace staticNonStaticMethods
 
             //this shows a static instance of a method, using the CLASS METHOD approach to calling it
             Console.WriteLine("\ncar Objects instantiated " + Car.numberOfCars);
-            Console.WriteLine(Car.carList); 
+ 
 
             Console.ReadLine();
         }
